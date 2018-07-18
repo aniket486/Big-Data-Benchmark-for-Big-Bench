@@ -92,9 +92,8 @@ FROM
     wp_type,
     --tstamp, --already sorted by time-stamp
     sessionid --but we still need the sessionid within the script to identify session boundaries
-
     -- script requires input tuples to be grouped by sessionid and ordered by timestamp ascending.
-    -- output one tuple: <pagecount> if a session's shopping cart is abandoned, else: nothing
+    -- output one tuple: <pagecount> if a sessions shopping cart is abandoned, else nothing
     USING 'python q4_abandonedShoppingCarts.py'
     AS (pagecount BIGINT)
 ) abandonedShoppingCartsPageCountsPerSession

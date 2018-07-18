@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS ${hiveconf:TEMP_TABLE1} AS
   SELECT s.s_store_sk, s.s_store_name
   FROM store s,
   (
-    --select ss_store_sk's with flat or declining sales in 3 consecutive months.
+    --select ss_store_sks with flat or declining sales in 3 consecutive months.
     -- linear regression part of stores by analysing store_sales
     SELECT
       temp.ss_store_sk,

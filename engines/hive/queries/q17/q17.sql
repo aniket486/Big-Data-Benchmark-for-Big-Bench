@@ -62,7 +62,7 @@ JOIN (
   AND d_year = ${hiveconf:q17_year}
   AND d_moy = ${hiveconf:q17_month}
 ) all_sales
--- we don't need a 'ON' join condition. result is just two numbers.
+-- we don't need a ON join condition. result is just two numbers.
 ORDER BY promotions, total
 LIMIT 100 -- kinda useless, result is one line with two numbers, but original tpc-ds query has it too.
 ;

@@ -28,7 +28,7 @@ FROM (
     inv_warehouse_sk,
     inv_item_sk,
     d_moy,
-    -- implicit group by d_moy using CASE filters inside the stddev_samp() and avg() UDF's. This saves us from requiring a self join for correlation of d_moy and d_moy+1 later on.
+    -- implicit group by d_moy using CASE filters inside the stddev_samp() and avg() UDFs. This saves us from requiring a self join for correlation of d_moy and d_moy+1 later on.
     cast( stddev_samp( inv_quantity_on_hand ) as decimal(15,5)) stdev,
     cast(         avg( inv_quantity_on_hand ) as decimal(15,5)) mean
    
