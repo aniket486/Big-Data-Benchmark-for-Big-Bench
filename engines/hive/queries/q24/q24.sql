@@ -107,4 +107,3 @@ GROUP BY  ws.ws_item_sk
 
 -- clean up -----------------------------------
 DROP TABLE ${hiveconf:TEMP_TABLE};
-TODO
